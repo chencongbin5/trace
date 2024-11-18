@@ -2,6 +2,7 @@
 根据tid快速模拟测试环境的异常场景并在本地debugger,实现bug的快速重现，简化修复bug的时间精力投入
 
 功能1
+========
 ai检测
 输入全链路id和项目名称提交到trace-service服务 
 trace-service服务根据输入项目名称找到对应的git项目,clone到本地,切换到test分支.然后编译代码.
@@ -12,5 +13,9 @@ trace-service服务根据输入项目名称找到对应的git项目,clone到本�
 
 
 功能2
+========
 本地复现
+辅助trace-plugins插件做一套简单的界面.简化操作
+
+
 
