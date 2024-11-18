@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.akuchen.trace.service.mapper.TraceOrderMapper">
+  <resultMap id="BaseResultMap" type="com.akuchen.trace.service.entity.TraceOrder">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tid" jdbcType="VARCHAR" property="tid" />
+    <result column="app_name" jdbcType="VARCHAR" property="appName" />
+    <result column="service_name" jdbcType="VARCHAR" property="serviceName" />
+    <result column="git_url" jdbcType="VARCHAR" property="gitUrl" />
+    <result column="branch" jdbcType="VARCHAR" property="branch" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="error_class_name" jdbcType="VARCHAR" property="errorClassName" />
+    <result column="error_method_name" jdbcType="VARCHAR" property="errorMethodName" />
+    <result column="error_line" jdbcType="INTEGER" property="errorLine" />
+    <result column="error_code_block" jdbcType="VARCHAR" property="errorCodeBlock" />
+    <result column="error_code_block_context" jdbcType="VARCHAR" property="errorCodeBlockContext" />
+    <result column="gpt_answer" jdbcType="VARCHAR" property="gptAnswer" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tid, service_name,app_name, git_url, branch, status, error_class_name, error_method_name,
+    error_line, error_code_block, error_code_block_context, gpt_answer
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_trace_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByTid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_trace_order
+    where tid = #{tid} order by id desc limit 1
+  </select>
+  <select id="selectByTidAndAppName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_trace_order
+    where tid = #{tid} and app_name=#{appName} order by id desc limit 1
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_trace_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insertSelective" parameterType="com.akuchen.trace.service.entity.TraceOrder" useGeneratedKeys="true" keyProperty="id">
+    insert into t_trace_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+
+      <if test="tid != null">
+        tid,
+      </if>
+      <if test="serviceName != null">
+        service_name,
+      </if>
+      <if test="appName != null">
+        app_name,
+      </if>
+      <if test="gitUrl != null">
+        git_url,
+      </if>
+      <if test="branch != null">
+        branch,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="errorClassName != null">
+        error_class_name,
+      </if>
+      <if test="errorMethodName != null">
+        error_method_name,
+      </if>
+      <if test="errorLine != null">
+        error_line,
+      </if>
+      <if test="errorCodeBlock != null">
+        error_code_block,
+      </if>
+      <if test="errorCodeBlockContext != null">
+        error_code_block_context,
+      </if>
+      <if test="gptAnswer != null">
+        gpt_answer,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+      <if test="tid != null">
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceName != null">
+        #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="appName != null">
+        #{appName},
+      </if>
+      <if test="gitUrl != null">
+        #{gitUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="branch != null">
+        #{branch,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errorClassName != null">
+        #{errorClassName,jdbcType=VARCHAR},
+      </if>
+      <if test="errorMethodName != null">
+        #{errorMethodName,jdbcType=VARCHAR},
+      </if>
+      <if test="errorLine != null">
+        #{errorLine,jdbcType=INTEGER},
+      </if>
+      <if test="errorCodeBlock != null">
+        #{errorCodeBlock,jdbcType=VARCHAR},
+      </if>
+      <if test="errorCodeBlockContext != null">
+        #{errorCodeBlockContext,jdbcType=VARCHAR},
+      </if>
+      <if test="gptAnswer != null">
+        #{gptAnswer,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.akuchen.trace.service.entity.TraceOrder">
+    update t_trace_order
+    <set>
+      <if test="tid != null">
+        tid = #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceName != null">
+        service_name = #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="appName != null">
+        app_name = #{appName},
+      </if>
+      <if test="gitUrl != null">
+        git_url = #{gitUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="branch != null">
+        branch = #{branch,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errorClassName != null">
+        error_class_name = #{errorClassName,jdbcType=VARCHAR},
+      </if>
+      <if test="errorMethodName != null">
+        error_method_name = #{errorMethodName,jdbcType=VARCHAR},
+      </if>
+      <if test="errorLine != null">
+        error_line = #{errorLine,jdbcType=INTEGER},
+      </if>
+      <if test="errorCodeBlock != null">
+        error_code_block = #{errorCodeBlock,jdbcType=VARCHAR},
+      </if>
+      <if test="errorCodeBlockContext != null">
+        error_code_block_context = #{errorCodeBlockContext,jdbcType=VARCHAR},
+      </if>
+      <if test="gptAnswer != null">
+        gpt_answer = #{gptAnswer,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

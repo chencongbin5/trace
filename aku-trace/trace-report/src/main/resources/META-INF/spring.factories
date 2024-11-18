@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.akuchen.trace.report.aop.LeafAspect,\
+com.akuchen.trace.report.aop.SqlV2Aspect,\
+com.akuchen.trace.report.aop.MqAspect,\
+com.akuchen.trace.report.aop.JobAspect,\
+com.akuchen.trace.report.aop.JobAlScheduledAspect,\
+com.akuchen.trace.report.aop.HttpServiceAspect,\
+com.akuchen.trace.report.aop.BeanConfig,\
+com.akuchen.trace.report.aop.BizAspect
