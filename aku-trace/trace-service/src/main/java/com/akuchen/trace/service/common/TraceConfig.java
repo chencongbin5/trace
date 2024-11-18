@@ -45,8 +45,7 @@ public class TraceConfig {
     /**
      * 如花的token
      */
-    //private String authorization="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJkZXB0OmVkaXQsdXNlcjpsaXN0LHN0b3JhZ2U6YWRkLGRlcHQ6YWRkLHN0b3JhZ2U6ZWRpdCxtZW51OmRlbCxyb2xlczpkZWwsYWRtaW4sc3RvcmFnZTpsaXN0LGpvYjplZGl0LGRlcGxveUhpc3Rvcnk6bGlzdCx1c2VyOmRlbCxzZXJ2ZXI6bGlzdCxkaWN0OmFkZCxkZXB0Omxpc3QsdGltaW5nOmFkZCxqb2I6bGlzdCxkaWN0OmRlbCxkaWN0Omxpc3QsYXBwOmxpc3Qsam9iOmFkZCxkYXRhYmFzZTpsaXN0LHRpbWluZzpsaXN0LGRlcGxveTpsaXN0LHJvbGVzOmFkZCx1c2VyOmFkZCxwaWN0dXJlczpsaXN0LG1lbnU6ZWRpdCx0aW1pbmc6ZWRpdCxtZW51Omxpc3Qsc3RvcmFnZTpkZWwscm9sZXM6bGlzdCxtZW51OmFkZCxqb2I6ZGVsLHVzZXI6ZWRpdCxyb2xlczplZGl0LHRpbWluZzpkZWwsZGljdDplZGl0LHNlcnZlckRlcGxveTpsaXN0LGRlcHQ6ZGVsIiwiZXhwIjoxNzE0OTk4NzMyfQ.0WKpboiETy3QDzF0W8LQqIMtQCY13wpLHdkZYPomwSck1FxaF8BTkKyuR-4TXqSzLswFXjLRWVzxQNzEA4bbYQ";
-    private String authorization="Iapi 4rFHq5OPCLncvmBu+3VnURfi9Q/9A2rANOhAH4OB7vg=";
+    private String authorization="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
     @Data
     public static class application implements Serializable {

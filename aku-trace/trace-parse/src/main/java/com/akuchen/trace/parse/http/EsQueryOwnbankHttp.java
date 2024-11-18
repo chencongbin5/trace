@@ -116,10 +116,10 @@ public class EsQueryOwnbankHttp {
     }
 
     private static RestHighLevelClient restHighLevelClient() throws Exception {
-        String host="192.168.23.211";
+        String host="127.0.0.1";
         Integer port=32600;
-        String username="elastic";
-        String password="XK202d7J40X35hk34yqxYxqA";
+        String username="xxxxxxx";
+        String password="xxxxxxx";
         SSLContext sslContext = SSLContexts.custom()
                                            .loadTrustMaterial(null, (x509Certificates, authType) -> true)
                                            .build();
@@ -143,10 +143,5 @@ public class EsQueryOwnbankHttp {
     }
 
 
-    public static void main(String[] args) {
-        List<String> strings = EsQueryOwnbankHttp.queryLog(0,
-                                                           "54fda3aba4714b078ac40cf4fd8044d3.852.17198190705059001",
-                                                           "credit-service");
-        System.out.println(strings);
-    }
+
 }

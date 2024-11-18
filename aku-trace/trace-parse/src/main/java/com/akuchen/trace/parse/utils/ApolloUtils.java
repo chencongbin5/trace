@@ -41,7 +41,7 @@ public class ApolloUtils {
     public static void init() {
         // 设置Apollo配置
         System.setProperty("app.id", "trace-service");
-        System.setProperty("apollo.meta", "http://192.168.3.247:9090");
+        System.setProperty("apollo.meta", "http://127.0.0.1:9090");
 
         System.setProperty("env", "test");
         // 获取Apollo配置

@@ -100,10 +100,10 @@ public class EsQueryHttp {
     }
 
     private static RestHighLevelClient restHighLevelClient() {
-        String host="192.168.16.125";
+        String host="127.0.0.1";
         Integer port=31437;
-        String username="elastic";
-        String password="WVx5060a7cWr1GLY93m0Baa6";
+        String username="xxxxxxxxx";
+        String password="xxxxxxxxx";
         RestClientBuilder builder = RestClient.builder(new HttpHost(host, port));
         if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
             final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
@@ -120,10 +120,5 @@ public class EsQueryHttp {
         return restHighLevelClient;
     }
 
-    public static void main(String[] args) {
-        List<String> strings = EsQueryHttp.queryLog(0,
-                                                           "a775a6fd294a4db889c2bde94a95d727.215548.17198207403670017",
-                                                           "order-service");
-        System.out.println(strings);
-    }
+
 }
