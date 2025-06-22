@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.akuchen.trace.parse.common.config.BeanConfig,\
-com.akuchen.trace.parse.common.BeanMockProcessor,\
-com.akuchen.trace.parse.jdi.listener.StartUpListener
