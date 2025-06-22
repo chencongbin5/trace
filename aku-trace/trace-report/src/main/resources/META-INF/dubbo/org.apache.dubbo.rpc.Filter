@@ -1,0 +1,2 @@
+traceConsumerRpcFilter=com.akuchen.trace.report.filter.ConsumerRpcLogFilter
+traceProviderRpcFilter=com.akuchen.trace.report.filter.ProviderRpcLogFilter
